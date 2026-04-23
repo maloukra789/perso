@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:27:19 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/22 14:36:51 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:01:04 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stddef.h>
-#include <stdio.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -26,17 +26,18 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		a[i] = b[i];
 		i++;
 	}
-	return (a);
+	return (dest);
 }
 /*
+#include <stdio.h>
 int main()
 {
 	char s[14] = "salut c malek";
 	int n;
-	n = 15;
+	n = 5;
 	char a[n];
 	ft_memcpy(a, s, n);
-	printf("%s", a);
+	printf("%s\n", a);
 	return(0);
 }
 */

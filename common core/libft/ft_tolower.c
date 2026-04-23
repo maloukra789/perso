@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 17:28:01 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/23 12:52:13 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/22 18:45:43 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/22 18:47:40 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	ft_bzero(void *s, size_t n)
+int	ft_tolower(int c)
 {
-	size_t			i;
-	unsigned char	*r;
-
-	r = s;
-	i = 0;
-	while (i < n)
-	{
-		r[i] = (unsigned char) 0;
-		i++;
-	}
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }
 /*
 #include <stdio.h>
-int	main(void)
+int main ()
 {
-	char s[10] = "salutcava";
-	printf("%s\n", s);
-	ft_bzero(s, 3);
-	printf("%s\n", s);
-	return (0);
+        printf("%d", ft_tolower('b'));
+        return(0);
 }
 */

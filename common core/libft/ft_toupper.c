@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:48:59 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/23 18:19:04 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/22 18:24:30 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/22 18:48:18 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_toupper(int c)
 {
-	int			i;
-	char	*a;
-
-	i = 0;
-	while (s[i])
-	{
-		if (c == s[i])
-		{
-			a = &s[i];
-			return (&s[i]);
-		}
-		i++;
-	}
-	return (NULL);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
-
+/*
 #include <stdio.h>
-int main()
+int main ()
 {
-	char *s = "bonjour !";
-	printf("%s", ft_strchr(s, 'j'));
+	printf("%d", ft_toupper(97));
 	return(0);
 }
-
+*/

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:05:42 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/22 13:24:24 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/23 14:33:49 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_isalpha(int c)
 {
 	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
