@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:48:59 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/25 12:39:31 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/25 15:12:06 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/25 15:18:35 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strchr(const char *s, int c)
+char    *strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
-	char	a;
+    int i;
+    int j;
 
-	i = 0;
-	a = (char) c;
-	while (s[i])
-	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
-		i++;
-	}
-	return (NULL);
+    i = 0;
+    j = 0;
+    while (big[i])
+    {
+        if (big[i] = little[j])
+        {   while (little[j])
+            {
+                if(little[j] = big[i])
+                    i++;
+                    j++;
+            }
+                    reutrn    
+                    
+            }
+    }
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *s = "bonjour !";
-	printf("%s", ft_strchr(s, 'r'));
-	return(0);
-}
-*/

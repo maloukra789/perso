@@ -1,50 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 14:38:24 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/25 15:00:30 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/25 12:19:36 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/25 12:58:25 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t						i;
-	unsigned char				*b;
-	unsigned char				*t;
-	unsigned char				*a;
+	int		i;
+	char	a;
 
+	a = c;
 	i = 0;
-	a = dest;
-	b = (unsigned char *) src;
-	while (i < n)
-	{
-		t[i] = (unsigned char ) b[i];
+	while (s[i])
 		i++;
-	}
-	i = 0;
-	while (i < n)
+	while (i >= 0)
 	{
-		a[i] = t[i];
-		i++;
+		if (a == s[i])
+		{
+			return ((char *) &s[i]);
+		}
+		i--;
 	}
-	return (dest);
+	return (NULL);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
-	char s[14] = "salut c malek";
-	int n;
-	n = 5;
-	char a[n];
-	ft_memmove(a, s, n);
-	printf("%s\n", a);
+	char *s = "abcdbcdrjuybcd";
+	printf("%s", ft_strrchr(s, 'j'));
 	return(0);
 }
-	
+*/
