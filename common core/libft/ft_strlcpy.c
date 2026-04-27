@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:48:59 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:02:35 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/26 14:04:01 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/27 15:53:56 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
-	int		i;
-	char	a;
+	int	i;
 
 	i = 0;
-	a = (char) c;
 	while (s[i])
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	while (i <= size - 1 && src[i] != '\0')
 	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
+		dst[i] = src[i];
 		i++;
 	}
-	return (NULL);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
 /*
 #include <stdio.h>
-int main()
+int main ()
 {
-	char *s = "bonjour !";
-	printf("%s", ft_strchr(s, 'r'));
+	char s[10] = "sblut c !";
+	char t[10];
+	printf("%ld\n", ft_strlcpy(t, s, 5));
+	printf("%s\n", t);
 	return(0);
 }
 */

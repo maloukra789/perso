@@ -6,9 +6,10 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 19:01:03 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/23 10:41:17 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/27 11:16:11 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stddef.h>
 
 int	ft_strncmp(const char s1[], const char s2[], size_t n)
@@ -23,17 +24,11 @@ int	ft_strncmp(const char s1[], const char s2[], size_t n)
 	b = 0;
 	while (i < n)
 	{
-		a = s1[i] + a;
-		b = s2[i] + b;
-		i++;
+		if (s1[i] == s2[i])
+			i++;
+		else
+			return ((s1[i] - s2[i]));
 	}
-	if (a > b)
-		flag = 1;
-	if (a < b)
-		flag = -1;
-	if (a == b)
-		flag = 0;
-	return (flag);
 }
 /*
 #include <stdio.h>

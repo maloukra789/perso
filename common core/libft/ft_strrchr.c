@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 12:19:36 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/25 12:58:25 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/27 18:20:35 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
+
 #include <stdio.h>
 int main()
 {
@@ -39,4 +39,4 @@ int main()
 	printf("%s", ft_strrchr(s, 'j'));
 	return(0);
 }
-*/
+

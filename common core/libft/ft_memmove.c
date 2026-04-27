@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:38:24 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/25 15:00:30 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/27 11:14:01 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,39 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t						i;
 	unsigned char				*b;
-	unsigned char				*t;
 	unsigned char				*a;
 
 	i = 0;
-	a = dest;
+	a = (unsigned char *) dest;
 	b = (unsigned char *) src;
-	while (i < n)
+	if (src > dest)
 	{
-		t[i] = (unsigned char ) b[i];
-		i++;
+		while (i < n)
+		{
+			a[i] = b[i];
+			i++;
+		}
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		a[i] = t[i];
-		i++;
+		while (n > 0)
+		{
+			a[n] = b[n];
+			n--;
+		}
 	}
 	return (dest);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
 	char s[14] = "salut c malek";
 	int n;
-	n = 5;
+	n = 10;
 	char a[n];
 	ft_memmove(a, s, n);
 	printf("%s\n", a);
 	return(0);
 }
-	
+*/

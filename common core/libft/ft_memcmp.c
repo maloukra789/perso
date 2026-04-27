@@ -3,49 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 18:22:02 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/25 15:48:48 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/27 10:32:38 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int     *ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-        size_t      i;
-        int     *a;
-        int     *b;
-        int     *flag;
-        
-        i = 0;
-        flag = 0;
-        a = (int *) s1;
-        b = (int *) s2;
-        while (i < n)
-        {
-                if (a[i] = b[i])
-                        i++;
-                if (a[i] < b[i])
-                {
-                        flag[0] = -1;
-                        return (flag);
-                }
-                if (a[i] > b[i])
-                {
-                        flag[0] = 1;        
-                        return (flag);
-                }
-        }
-        return (flag);
-}
+	int						i;
+	int						j;
+	unsigned const char		*a;
+	unsigned const char		*b;
 
+	i = 0;
+	a = s1;
+	b = s2;
+	j = (int) n;
+	if (n == 0)
+		return (0);
+	while (i < j)
+	{
+		if (a[i] == b[i])
+			i++;
+		else
+			return (a[i] - b[i]);
+	}
+	return (0);
+}
+/*
 #include <stdio.h>
 int main ()
 {
-	char s[10] = "sblut c !";
-	char t[10] = "salut c !";
-	printf("%ls", ft_memcmp(s, t, 5));
+	char s[10] = "s1lut c !";
+	char t[10] = "sZlut c !";
+	printf("%d", ft_memcmp(s, t, 5));
 	return(0);
 }
+*/

@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:48:59 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:02:35 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/27 14:19:38 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/27 18:08:15 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_atoi(const char *nptr)
 {
-	int		i;
-	char	a;
+	int	i;
+	int	sign;
+	int	yo;
 
+	sign = 1;
 	i = 0;
-	a = (char) c;
-	while (s[i])
+	yo = 0;
+	while (nptr[i])
 	{
-		if (a == s[i])
+		while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+			i++;
+		if (nptr[i] == '-')
 		{
-			return ((char *) &s[i]);
+			sign = -1;
+		}
+		if (nptr[i] >= '0' && nptr[i] <= '9')
+		{
+			yo = yo * 10 + (nptr[i] - '0');
 		}
 		i++;
 	}
-	return (NULL);
+	return(yo * sign);
 }
+
 /*
 #include <stdio.h>
 int main()
 {
-	char *s = "bonjour !";
-	printf("%s", ft_strchr(s, 'r'));
+	char *s = {"      535458abcd"};
+	printf("%d", ft_atoi(s));
 	return(0);
 }
 */

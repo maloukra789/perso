@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:48:59 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:02:35 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/27 16:01:10 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/27 18:27:02 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+void *ft_calloc(size_t n, size_t size)
 {
-	int		i;
-	char	a;
+	char	*s;
+	size_t i;
 
 	i = 0;
-	a = (char) c;
-	while (s[i])
+	s = malloc(sizeof(char) * (n * size));
+	if (!s)
+		return(NULL);
+	while (i < size)
 	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
+		s[i] = (unsigned char) 0;
 		i++;
 	}
-	return (NULL);
+	return((void *) &s[i]);
 }
-/*
+
 #include <stdio.h>
 int main()
 {
-	char *s = "bonjour !";
-	printf("%s", ft_strchr(s, 'r'));
+	printf("%p", ft_calloc(5, 5));
 	return(0);
 }
-*/

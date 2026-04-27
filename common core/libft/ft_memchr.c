@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:48:59 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:02:35 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/26 15:46:58 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/27 11:13:34 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
-	char	a;
+	size_t			i;
+	unsigned char	*t;
 
 	i = 0;
-	a = (char) c;
-	while (s[i])
+	t = (unsigned char *)s;
+	while (i < n)
 	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
+		if (t[i] == c)
+			return (&t[i]);
 		i++;
 	}
 	return (NULL);
@@ -34,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 int main()
 {
 	char *s = "bonjour !";
-	printf("%s", ft_strchr(s, 'r'));
+	printf("%p", ft_memchr(s, 'o', 10 ));
 	return(0);
 }
 */
