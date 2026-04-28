@@ -1,47 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 14:19:38 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 09:41:38 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/28 10:18:51 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/28 10:37:47 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+#include <unistd.h>
+
+void ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	int	sign;
-	int	yo;
 
-	sign = 1;
 	i = 0;
-	yo = 0;
-	while (nptr[i])
+	while (s[i])
 	{
-		while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-			i++;
-		if (nptr[i] == '-')
-		{
-			sign = -1;
-		}
-		if (nptr[i] >= '0' && nptr[i] <= '9')
-		{
-			yo = yo * 10 + (nptr[i] - '0');
-		}
-		i++;
+		write(fd, &s[i], 1);
 	}
-	return (yo * sign);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	char *s = {"      535458abcd"};
-	printf("%d", ft_atoi(s));
-	return(0);
-}
-*/

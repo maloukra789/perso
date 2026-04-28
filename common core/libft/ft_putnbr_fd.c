@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 12:19:36 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 09:40:09 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/28 10:43:23 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/28 11:16:05 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c)
+void ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	a;
-
-	a = c;
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	if (n == -2147483648)
 	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
-		i--;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (NULL);
+	if (n < 0)
+		write(fd, "-", 1);
+	if (n >= '0' && n <= '9')
+		write (fd, n + '0', 1);
+	else
+	{
+		ft_putnbr_fd(n / 10);
+		ft_putnbr_fd(n % 10);
+	}
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *s = "abcdbcdrjuybcd";
-	printf("%s", ft_strrchr(s, 'j'));
-	return(0);
-}
-*/

@@ -6,32 +6,33 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:01:10 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 18:27:02 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/28 14:32:20 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void *ft_calloc(size_t n, size_t size)
+void	*ft_calloc(size_t n, size_t size)
 {
 	char	*s;
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	s = malloc(sizeof(char) * (n * size));
 	if (!s)
-		return(NULL);
+		return (NULL);
 	while (i < size)
 	{
 		s[i] = (unsigned char) 0;
 		i++;
 	}
-	return((void *) &s[i]);
+	return ((void *) &s[i]);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
 	printf("%p", ft_calloc(5, 5));
 	return(0);
 }
+*/

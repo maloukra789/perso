@@ -6,32 +6,31 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 15:42:30 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 15:56:01 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/28 13:16:27 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
 	char	*new;
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
-
 	new = malloc(sizeof(char) * i + 1);
 	i = 0;
+	if (!new)
+		return (NULL);
 	while (s[i])
 	{
 		new[i] = s[i];
 		i++;
 	}
 	new[i] = '\0';
-	return(new);
+	return (new);
 }
 
 /*

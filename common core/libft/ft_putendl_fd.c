@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 12:19:36 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 09:40:09 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/28 10:36:57 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/28 10:38:57 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c)
+void ft_putendl_fd(char *s, int fd)
 {
-	int		i;
-	char	a;
+	int	i;
 
-	a = c;
 	i = 0;
 	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
-		i--;
-	}
-	return (NULL);
+		write(fd, &s[i], 1);
+	write(fd, '\n', 1);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *s = "abcdbcdrjuybcd";
-	printf("%s", ft_strrchr(s, 'j'));
-	return(0);
-}
-*/

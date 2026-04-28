@@ -1,42 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 12:19:36 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 09:40:09 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/28 10:13:06 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/28 10:14:29 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	char	a;
-
-	a = c;
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (a == s[i])
-		{
-			return ((char *) &s[i]);
-		}
-		i--;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *s = "abcdbcdrjuybcd";
-	printf("%s", ft_strrchr(s, 'j'));
-	return(0);
-}
-*/

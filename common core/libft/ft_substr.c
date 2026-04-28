@@ -1,47 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 14:19:38 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 09:41:38 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/28 08:56:39 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/28 09:42:08 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
-{
-	int	i;
-	int	sign;
-	int	yo;
+#include <stddef.h>
+#include <stdlib.h>
 
-	sign = 1;
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	char	*n;
+
+	n = malloc(sizeof(char) * len);
+	if (!n)
+		return (NULL);
 	i = 0;
-	yo = 0;
-	while (nptr[i])
+	while (i < len)
 	{
-		while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-			i++;
-		if (nptr[i] == '-')
-		{
-			sign = -1;
-		}
-		if (nptr[i] >= '0' && nptr[i] <= '9')
-		{
-			yo = yo * 10 + (nptr[i] - '0');
-		}
+		n[i] = s[start + i];
 		i++;
 	}
-	return (yo * sign);
+	return (n);
 }
-
 /*
 #include <stdio.h>
+
 int main()
 {
-	char *s = {"      535458abcd"};
-	printf("%d", ft_atoi(s));
+	char *c = {"salut c malek"};
+	printf("%s", ft_substr(c, 6, 5));
 	return(0);
 }
 */

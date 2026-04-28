@@ -6,29 +6,29 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:12:06 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 15:19:38 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/28 09:40:42 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	int s;
+	int		s;
 
 	i = 0;
 	j = 0;
 	if (little[0] == '\0')
 		return ((char *) big);
-	while(i < len)
+	while (i < len)
 	{
 		s = (int) i;
 		while (little[j] == big[i + j] && little[j] && big[i + j] && i < len)
 			j++;
 		if (little[j] == '\0')
-			return((char *) &big[s]);
+			return ((char *) &big[s]);
 		i++;
 	}
 	return (NULL);
