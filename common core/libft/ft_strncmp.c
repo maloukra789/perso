@@ -6,7 +6,7 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 19:01:03 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:16:11 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:41:21 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 int	ft_strncmp(const char s1[], const char s2[], size_t n)
 {
 	size_t	i;
-	int		a;
-	int		b;
-	int		flag;
 
 	i = 0;
-	a = 0;
-	b = 0;
 	while (i < n)
 	{
 		if (s1[i] == s2[i])
@@ -29,6 +24,7 @@ int	ft_strncmp(const char s1[], const char s2[], size_t n)
 		else
 			return ((s1[i] - s2[i]));
 	}
+	return (0);
 }
 /*
 #include <stdio.h>

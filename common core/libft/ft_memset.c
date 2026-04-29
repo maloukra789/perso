@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:18:10 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/23 12:54:18 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:30:55 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

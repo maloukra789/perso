@@ -1,43 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 13:27:19 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/29 15:30:48 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/29 11:52:02 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/29 18:37:29 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t				i;
-	unsigned char		*a;
-	unsigned const char	*b;
-
-	b = src;
-	a = dest;
-	i = 0;
-	while (i < n)
-	{
-		a[i] = b[i];
-		i++;
-	}
-	return (dest);
-}
-/*
+#include <stdlib.h>
 #include <stdio.h>
-int main()
+
+char	*ft_itoa(int nb)
 {
-	char s[14] = "salut c malek";
-	int n;
-	n = 5;
-	char a[n];
-	ft_memcpy(a, s, n);
-	printf("%s\n", a);
+	int		a;
+	char	*tab;
+	int		n;
+	int		g;
+
+	n = nb;
+	a = 0;
+	if (nb < 0)
+		a = 1;
+	while (n != 0)
+	{
+		n = n / 10;
+		a++;
+	}
+	tab = malloc(sizeof(char) * a + 1);
+	tab[a] = '\0';
+	a--;
+	if (nb < 0)
+	{
+		tab[0] = '-';
+		nb = -nb;
+	}
+	while (nb > 0 && a > 0)
+	{
+		tab[a] = (nb % 10) + '0';
+		nb = nb / 10;
+		a--;
+	}
+	return (tab);
+}
+int main ()
+{
+	int nb = -1364782;
+	printf("%s", ft_itoa(nb));
 	return(0);
 }
-*/

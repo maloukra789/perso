@@ -6,11 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:38:24 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:14:01 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:30:51 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

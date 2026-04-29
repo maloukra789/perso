@@ -6,9 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 15:46:58 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/27 11:13:34 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:30:41 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include <stddef.h>
 

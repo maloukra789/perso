@@ -6,13 +6,13 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:18:51 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 10:37:47 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:31:16 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
@@ -20,5 +20,14 @@ void ft_putstr_fd(char *s, int fd)
 	while (s[i])
 	{
 		write(fd, &s[i], 1);
+		i++;
 	}
 }
+/*
+int main()
+{
+	char	*s = {"salut c malek"};
+	ft_putstr_fd(s, 1);
+	return(0);
+}
+*/

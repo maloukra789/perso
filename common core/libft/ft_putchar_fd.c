@@ -6,13 +6,20 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:13:06 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 10:14:29 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:31:02 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+/*
+int main()
+{
+	ft_putchar_fd('c', 0);
+	return(0);
+}
+*/

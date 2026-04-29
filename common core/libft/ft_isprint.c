@@ -6,9 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:55:03 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/22 09:52:52 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:30:33 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

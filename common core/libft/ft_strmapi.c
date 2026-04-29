@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 13:27:19 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/29 15:30:48 by makassem         ###   ########.fr       */
+/*   Created: 2026/04/29 12:17:19 by makassem          #+#    #+#             */
+/*   Updated: 2026/04/29 18:12:04 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t				i;
-	unsigned char		*a;
-	unsigned const char	*b;
+	unsigned int	i;
+	char			*tab;
 
-	b = src;
-	a = dest;
 	i = 0;
-	while (i < n)
+	tab = malloc(sizeof(char) * ft_strlen(s));
+	while (s[i])
 	{
-		a[i] = b[i];
+		tab[i] = f(i, s[i]);
 		i++;
 	}
-	return (dest);
+	return (tab);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char s[14] = "salut c malek";
-	int n;
-	n = 5;
-	char a[n];
-	ft_memcpy(a, s, n);
-	printf("%s\n", a);
-	return(0);
-}
-*/

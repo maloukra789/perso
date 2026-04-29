@@ -6,11 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 12:19:36 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 09:40:09 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:32:34 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

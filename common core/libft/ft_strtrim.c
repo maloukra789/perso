@@ -6,12 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 13:29:02 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 17:23:04 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:35:07 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
 int	isset(char const s1, char const *set)
 {
@@ -25,16 +24,6 @@ int	isset(char const s1, char const *set)
 		i++;
 	}
 	return (0);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -66,7 +55,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (s);
 }
 
-/*
+
 #include <stdio.h>
 int main()
 {
@@ -76,4 +65,4 @@ int main()
 	printf("%s\n", ft_strtrim(s, set));
 	return (0);
 }
-*/
+

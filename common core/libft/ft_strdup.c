@@ -6,11 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 15:42:30 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 13:16:27 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:32:07 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

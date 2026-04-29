@@ -6,11 +6,11 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:01:10 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 14:32:20 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:30:08 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t n, size_t size)
 {

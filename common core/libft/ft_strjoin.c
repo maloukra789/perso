@@ -6,41 +6,40 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 11:29:18 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/28 13:15:07 by makassem         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:32:11 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-	#include <stddef.h>
-	#include <stdlib.h>
+#include "libft.h"
 
-	size_t	ft_strlen(const char *s)
-	{
-		int	i;
+size_t	ft_strlen(const char *s)
+{
+	int	i;
 
-		i = 0;
-		while (s[i])
-			i++;
-		return (i);
-	}
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
 
-	char *ft_strjoin(char const *s1, char const *s2)
-	{
-		char	*s;
-		int		i;
-		int		j;
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*s;
+	int		i;
+	int		j;
 
-		i = 0;
-		s = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
-		if (!s)
-			return(NULL);
-		j = 0;
-		while (s1[j])
-			s[i++] = s1[j++];
-		j = 0;
-		while(s2[j])
-			s[i++] = s2[j++];
-		return(s);
-	}
+	i = 0;
+	s = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s)
+		return (NULL);
+	j = 0;
+	while (s1[j])
+		s[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		s[i++] = s2[j++];
+	return (s);
+}
 
 /*
 	#include <stdio.h>
