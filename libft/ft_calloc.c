@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:01:10 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/29 15:30:08 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/03 23:27:50 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	*ft_calloc(size_t n, size_t size)
 	s = malloc(sizeof(char) * (n * size));
 	if (!s)
 		return (NULL);
-	while (i < size)
+	while (i < n * size)
 	{
 		s[i] = (unsigned char) 0;
 		i++;
 	}
-	return ((void *) &s[i]);
+	return ((void *) s);
 }
 /*
 #include <stdio.h>

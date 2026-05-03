@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:05:42 by makassem          #+#    #+#             */
-/*   Updated: 2026/05/01 18:42:12 by malek            ###   ########.fr       */
+/*   Created: 2026/05/03 15:37:09 by malek             #+#    #+#             */
+/*   Updated: 2026/05/03 23:26:32 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+list_t  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
-		return (0);
-	return (1);
+    t_list    *new;
+    t_list     *part;
+
+    new = NULL;
+    while (lst)
+    {
+        part=ft_lstnew(f(lst->content));
+        if (!part)
+            {
+                ft_lstclear(&new, del);
+                return(NULL);
+            }
+        ft_lstadd_back(&new, part)
+        lst=lst->next;
+    }
+    return(new);
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-        int a;
-        a = '1';
-        printf("%d", ft_isalpha(a));
-        return(0);
-}
-*/

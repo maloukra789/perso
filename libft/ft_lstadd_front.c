@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:05:42 by makassem          #+#    #+#             */
-/*   Updated: 2026/05/01 18:42:12 by malek            ###   ########.fr       */
+/*   Created: 2026/05/02 11:01:49 by malek             #+#    #+#             */
+/*   Updated: 2026/05/02 12:44:53 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void    ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
-		return (0);
-	return (1);
+    if (!lst || !new)
+        return ;
+    new->next = *lst;
+    *lst = new;
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-        int a;
-        a = '1';
-        printf("%d", ft_isalpha(a));
-        return(0);
-}
-*/

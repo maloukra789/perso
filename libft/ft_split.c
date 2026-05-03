@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 08:41:08 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/30 09:15:43 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/02 12:29:52 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 
-static char	*copyword(const char *s, int start, int len)
+static char	*copy(const char *s, int start, int len)
 {
 	char	*tab;
 	int		i;
@@ -32,7 +32,7 @@ static char	*copyword(const char *s, int start, int len)
 	return (tab);
 }
 
-static int	wordlen(const char *s, char c, int i)
+static int	len(const char *s, char c, int i)
 {
 	int	l;
 
@@ -80,8 +80,8 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] && s[i] != c)
 		{
-			l = wordlen(s, c, i);
-			tab[j] = copyword(s, i, l);
+			l = len(s, c, i);
+			tab[j] = copy(s, i, l);
 			if (!tab[j])
 				return (NULL);
 			i = i + l;
