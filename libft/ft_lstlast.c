@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 14:38:30 by malek             #+#    #+#             */
-/*   Updated: 2026/05/04 08:30:51 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/04 20:43:55 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
     if (!lst)
         return(NULL);
-    while(lst)
+    while(lst->next)
         lst = lst->next;
     return(lst);
 }
