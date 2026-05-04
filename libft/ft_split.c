@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 08:41:08 by makassem          #+#    #+#             */
-/*   Updated: 2026/05/02 12:29:52 by malek            ###   ########.fr       */
+/*   Updated: 2026/05/04 16:41:37 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
 
 static char	*copy(const char *s, int start, int len)
 {
@@ -52,16 +50,18 @@ static int	countwords(const char *s, char c)
 
 	i = 0;
 	a = 0;
-	if (s[0] != c)
-	{
-		i++;
-		a++;
-	}
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c)
+		if (s[i] == c)
+		{
+			i++;
+		}
+		else
+		{
 			a++;
-		i++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
 	return (a);
 }
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	int (i) = 0;
 	int (j) = 0;
 	int (l) = 0;
-	tab = malloc(sizeof (char *) * countwords(s, c) + 1);
+	tab = malloc(sizeof (char *) * (countwords(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	while (s[i])
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 		else
 			i++;
 	}
-	tab[j] = '\0';
+	tab[j] = NULL;
 	return (tab);
 }
 /*

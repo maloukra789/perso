@@ -6,7 +6,7 @@
 #    By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 12:01:43 by makassem          #+#    #+#              #
-#    Updated: 2026/04/30 12:29:29 by makassem         ###   ########.fr        #
+#    Updated: 2026/05/04 08:39:22 by makassem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,15 @@ SRC = ft_atoi.c \
 	ft_isdigit.c \
 	ft_isprint.c \
 	ft_itoa.c \
+	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_memcpy.c \

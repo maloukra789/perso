@@ -6,7 +6,7 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 11:29:18 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/30 15:26:23 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/04 11:13:10 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	while (s2[j])
 		s[i++] = s2[j++];
+	s[i] = '\0';
 	return (s);
 }
 

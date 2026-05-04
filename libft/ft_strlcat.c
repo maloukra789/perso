@@ -6,7 +6,7 @@
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 14:48:54 by makassem          #+#    #+#             */
-/*   Updated: 2026/04/30 16:11:01 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/04 13:17:12 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	len;
-	size_t	lin;
+	size_t	lendst;
+	size_t	lensrc;
 
 	i = 0;
-	len = ft_strlen(dst);
-	lin = ft_strlen(src);
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
 	if (size == 0)
-		return (lin);
-	if (size <= len)
-		return (size + lin);
-	while (src[i] && len < size - 1 - ft_strlen(dst))
+		return (lensrc);
+	if (size <= lendst)
+		return (size + lensrc);
+	while (src[i] != '\0' && (lendst + i + 1) < size)
 	{
-		dst[len + i] = src[i];
+		dst[lendst + i] = src[i];
 		i++;
 	}
-	dst[len + i] = '\0';
-	return (lin + len);
+	dst[lendst + i] = '\0';
+	return (lensrc + lendst);
 }
 /*
 #include <stdio.h>
