@@ -6,7 +6,7 @@
 /*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 22:45:53 by malek             #+#    #+#             */
-/*   Updated: 2026/05/11 01:19:39 by malek            ###   ########.fr       */
+/*   Updated: 2026/05/11 01:48:33 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ int	typecheck(char s, va_list *list)
 		c = c + ft_putchar('%');
 	else if (s == 'c')
 		c = c + ft_putchar(va_arg (*list, int));
-	else if (s == 'd' || s == 'u' || s == 'i')
+	else if (s == 'd' || s == 'i')
 		c = c + ft_putnbr((long) va_arg (*list , int));
+	else if (s == 'u')
+		c = c + ft_unsputnbr((unsigned long) va_arg (*list, unsigned int));
 	else if (s == 's')
 		c = c + ft_putstr(va_arg (*list, char *));
 	else if (s == 'P')
@@ -49,7 +51,7 @@ int ft_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			c = c + typecheck(s[i + 1], &list);
-			i++;
+			i = i + 2;
 		}
 		else
 		{

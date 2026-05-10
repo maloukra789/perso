@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_unsputnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 18:44:45 by malek             #+#    #+#             */
-/*   Updated: 2026/05/11 01:47:38 by malek            ###   ########.fr       */
+/*   Created: 2026/05/11 01:43:28 by malek             #+#    #+#             */
+/*   Updated: 2026/05/11 01:48:55 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int ft_unsputnbr(unsigned long n)
+{
+    int c;
 
-int ft_putnbr(long n);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int ft_hexadecimal(unsigned int n, char c);
-int ft_printf(const char *s, ...);
-int ft_pointer(void *p);
-int ft_unsputnbr(unsigned long n);
-
-#endif
+    c = 0;
+    if (n <= 9)
+    {
+       c = c + ft_putchar(n + '0');
+    }
+    else
+    {
+        c = c + ft_putnbr(n / 10);
+        c = c + ft_putnbr(n % 10);
+    }
+    return(c);
+}
