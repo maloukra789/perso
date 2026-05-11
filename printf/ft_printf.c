@@ -6,7 +6,7 @@
 /*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 22:45:53 by malek             #+#    #+#             */
-/*   Updated: 2026/05/11 01:48:33 by malek            ###   ########.fr       */
+/*   Updated: 2026/05/11 11:26:35 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	typecheck(char s, va_list *list)
 
 	c = 0;
 	if (s == 'x' || s == 'X')
-		c = c + ft_hexadecimal(s, (unsigned int) va_arg (*list, int));
+		c = c + ft_hexadecimal((unsigned int) va_arg (*list, int), s);
 	else if (s == '%')
 		c = c + ft_putchar('%');
 	else if (s == 'c')
@@ -29,7 +29,7 @@ int	typecheck(char s, va_list *list)
 		c = c + ft_unsputnbr((unsigned long) va_arg (*list, unsigned int));
 	else if (s == 's')
 		c = c + ft_putstr(va_arg (*list, char *));
-	else if (s == 'P')
+	else if (s == 'p')
 		c = c + ft_pointer(va_arg (*list, void *));
 	else 
 		c = c + ft_putchar(s);

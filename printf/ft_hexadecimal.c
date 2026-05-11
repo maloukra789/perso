@@ -18,6 +18,11 @@ int ft_hexadecimal(unsigned int n, char c)
 	int		count;
 	
 	count = 0;
+	if (n == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
 	tab = NULL;
     if (c == 'x')
 		tab = "0123456789abcdef";
