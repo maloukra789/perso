@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 00:39:53 by malek             #+#    #+#             */
-/*   Updated: 2026/05/11 11:12:39 by malek            ###   ########.fr       */
+/*   Updated: 2026/05/12 09:19:36 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_longhexadecimal(unsigned long n, char c)
+static int	ft_longhexadecimal(unsigned long n, char c)
 {
-    char	*tab;
+	char	*tab;
 	int		count;
-	
+
 	count = 0;
 	if (n == 0)
 	{
@@ -24,7 +24,7 @@ static int ft_longhexadecimal(unsigned long n, char c)
 		return (1);
 	}
 	tab = NULL;
-    if (c == 'x')
+	if (c == 'x')
 		tab = "0123456789abcdef";
 	if (c == 'X')
 		tab = "0123456789ABCDEF";
@@ -35,19 +35,20 @@ static int ft_longhexadecimal(unsigned long n, char c)
 	return (count);
 }
 
-int ft_pointer(void *p)
+int	ft_pointer(void *p)
 {
-    int c;
-    
-    if (!p)
-    {   ft_putstr("(nil)");
-        return (5);
-    }
-    c = 0;
-    ft_putchar('0');
-    c++;
-    ft_putchar('x');
-    c++;    
-    c = c + ft_longhexadecimal((unsigned long) p, 'x');
-    return (c);
+	int	c;
+
+	if (!p)
+	{
+		ft_putstr("(nil)");
+		return (5);
+	}
+	c = 0;
+	ft_putchar('0');
+	c++;
+	ft_putchar('x');
+	c++;
+	c = c + ft_longhexadecimal((unsigned long) p, 'x');
+	return (c);
 }

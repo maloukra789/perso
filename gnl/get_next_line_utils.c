@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 18:44:45 by malek             #+#    #+#             */
-/*   Updated: 2026/05/12 09:18:08 by makassem         ###   ########.fr       */
+/*   Created: 2026/05/13 15:05:40 by makassem          #+#    #+#             */
+/*   Updated: 2026/05/13 16:20:00 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "get_next_line.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_strlen(char *str)
+{
+	int	i;
 
-int	ft_putnbr(long n);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_hexadecimal(unsigned int n, char c);
-int	ft_printf(const char *s, ...);
-int	ft_pointer(void *p);
-int	ft_unsputnbr(unsigned long n);
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	return (i);
+}
 
-#endif
+char	*ft_putstr(src, dst)
+{
+
+}

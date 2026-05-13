@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
+/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 22:45:53 by malek             #+#    #+#             */
-/*   Updated: 2026/05/11 11:26:35 by malek            ###   ########.fr       */
+/*   Updated: 2026/05/12 09:21:31 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,27 @@ int	typecheck(char s, va_list *list)
 	else if (s == 'c')
 		c = c + ft_putchar(va_arg (*list, int));
 	else if (s == 'd' || s == 'i')
-		c = c + ft_putnbr((long) va_arg (*list , int));
+		c = c + ft_putnbr((long) va_arg (*list, int));
 	else if (s == 'u')
 		c = c + ft_unsputnbr((unsigned long) va_arg (*list, unsigned int));
 	else if (s == 's')
 		c = c + ft_putstr(va_arg (*list, char *));
 	else if (s == 'p')
 		c = c + ft_pointer(va_arg (*list, void *));
-	else 
+	else
 		c = c + ft_putchar(s);
 	return (c);
 }
 
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-    va_list	list;
-	int	c;
-	int	i;
-	
+	va_list	list;
+	int		c;
+	int		i;
+
 	i = 0;
 	c = 0;
 	va_start(list, s);
-
 	while (s[i])
 	{
 		if (s[i] == '%')
@@ -62,3 +61,4 @@ int ft_printf(const char *s, ...)
 	va_end(list);
 	return (c);
 }
+\

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 18:44:45 by malek             #+#    #+#             */
-/*   Updated: 2026/05/12 09:18:08 by makassem         ###   ########.fr       */
+/*   Created: 2026/05/13 09:49:54 by makassem          #+#    #+#             */
+/*   Updated: 2026/05/13 16:04:36 by makassem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "get_next_line.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+char	*get_next_line(int fd)
+{
+	static int		l;
+	unsigned char	*tab;
+	unsigned char	*r;
+	size_t			buffer;
 
-int	ft_putnbr(long n);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_hexadecimal(unsigned int n, char c);
-int	ft_printf(const char *s, ...);
-int	ft_pointer(void *p);
-int	ft_unsputnbr(unsigned long n);
-
-#endif
+	buffer = 42;
+	l = 0;
+	tab = malloc(sizeof(char) * read(fd, tab, buffer));
+	r = malloc(sizeof (char) * ft_strlen(tab));
+	
+}
