@@ -3,40 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 09:49:54 by makassem          #+#    #+#             */
-/*   Updated: 2026/05/16 16:12:29 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/17 23:15:19 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_next_line(int fd)
+
+char    *ft_read(char *t, int fd, int BUFFER_SIZE)
 {
-	unsigned char			*tab;
-	unsigned char			*r;
-	static unsigned char	*t;
-	int						i;
-	int						j;
+    char    *tab;
+    char    *result;
+    int     r;
 
-	i = 0;
-	j = 0;
-	tab = malloc(sizeof(char) * read(fd, tab, BUFFER_SIZE));
-	r = malloc(sizeof(char) * ft_strlen(tab) + 1);
-	t = malloc(sizeof(char) *(BUFFER_SIZE - ft_strlen(r)));
-	while (i < ft_strlen(r))
-		tab[i++] = r[i++];
-	r[i] = '\0';
-	while (tab[i])
-		tab[i++] = t[j++];
-	t = ft_strjoin(t, tab + ft_strlen(r))
-
-	return (r);
+    tab = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+    if (!tab)
+        return (NULL);
+    return = read(fd, tab, BUFFER_SIZE);
+    if (return < 0)
+    {
+        free(tab);
+        return (NULL);
+    }
+    tab[return] = '\0';
+    r = ft_strjoin(t, tab);
+    free(tab);
+    return (r);
 }
 
-int	main(int argc, char *argv)
+char	*get_next_line(int fd)
 {
-	get_next_line(argv[1]);
-	return(0);
+	char			*tab;
+	char			*r;
+	static char		*t = NULL;
+
+	tab = ft_read(t, fd, BUFFER_SIZE);
+	if (!tab)
+		return (NULL);
+	r = ft_substr(tab, 0, ft_strlen(tab));
+	t = ft_substr(tab, ft_strlen(r), (ft_strlen(tab) - ft_strlen(r)));
+	return (r);
 }

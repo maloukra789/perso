@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makassem <makassem@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: malek <malek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 10:50:43 by makassem          #+#    #+#             */
-/*   Updated: 2026/05/16 14:58:51 by makassem         ###   ########.fr       */
+/*   Updated: 2026/05/17 23:16:15 by malek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int		ft_strlen(char *str);
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_substr(char  *s, unsigned int start, size_t len);
+char    *ft_read(char *t, int fd, int BUFFER_SIZE);
 
 #endif
